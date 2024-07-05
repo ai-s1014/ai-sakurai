@@ -1,0 +1,21 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+.title__sobolon {
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 90px;
+        height: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: v.$color-tag3;
+        opacity: 0.4;
+        z-index: -1;
+    }
+}

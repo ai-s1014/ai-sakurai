@@ -1,0 +1,16 @@
+@use "variable" as v;
+
+$layout-width-inner: 1200px;
+
+// ブレイクポイント
+$breakpoints: (
+    "sp": "(max-width: 767px)",
+    "tab": "(min-width: 768px) and (max-width: #{$layout-width-inner})",
+    "pc": "(min-width: #{$layout-width-inner})",
+);
+// メディアクエリ
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}

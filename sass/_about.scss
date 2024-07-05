@@ -1,0 +1,236 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+.about-page {
+    padding-top: 54px;
+}
+
+.group__row {
+    display: flex;
+    justify-content: space-between;
+
+    @include m.mq(sp) {
+        display: block
+    }
+}
+
+/* profile */
+.profile__group {
+    margin-top: 50px;
+
+    @include m.mq(sp) {
+        margin-top: 20px;
+    }
+}
+
+.profile__image {
+    width: 40%;
+
+    img {
+        width: 100%;
+    }
+
+    @include m.mq(sp) {
+        width: 100%;
+        height: 360px;
+        padding: 0 50px;
+        margin-top: -100px;
+    }
+}
+
+.profile__text-box {
+    width: 60%;
+    text-align: center;
+
+    @include m.mq(sp) {
+        width: 100%;
+        padding: 0 50px;
+    }
+}
+
+.profile__name {
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+.profile__bd {
+    padding-top: 20px;
+}
+
+.profile__text {
+    padding-top: 20px;
+    line-height: 1.75em;
+}
+
+/* skill */
+.skill__title {
+    text-align: center;
+
+    @include m.mq(sp) {
+        margin-top: 40px;
+    }
+}
+
+.group__right {
+    width: 50%;
+    padding: 0 20px;
+
+    @include m.mq(sp) {
+        width: 100%;
+        padding: 0 30px;
+    }
+}
+
+.group__left {
+    width: 50%;
+    padding: 0 20px;
+
+    @include m.mq(sp) {
+        width: 100%;
+        padding: 0 30px;
+    }
+}
+
+.skill__sub-title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+
+    @include m.mq(sp) {
+        font-size: 22px;
+        margin-top: 30px;
+
+
+    }
+}
+
+.skill__text {
+    width: 440px;
+    padding-top: 20px;
+    margin: 0 auto;
+    text-align: justify;
+
+    @include m.mq(sp) {
+        width: 300px;
+    }
+}
+
+.skill__tag-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.skill__tag {
+    width: 200px;
+
+}
+
+
+
+/* career */
+.career__group {
+    position: relative;
+}
+
+
+.career__title {
+    text-align: center;
+    margin-top: 100px;
+
+    @include m.mq(sp) {
+        margin-top: 40px;
+    }
+}
+
+.career__timeline {
+	position: relative;
+	margin: 1em auto;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 45px;
+        width: 3px;
+        height: 100%;
+        background: v.$color-tag4;
+    }
+
+    @include m.mq(sp) {
+
+        &:before {
+            left: 15px;
+        }
+    }
+}
+
+.time {
+    font-family: degular, sans-serif;
+}
+
+.career__timeline .timeline__item {
+	margin: 0px 0px 0px 80px;
+
+    @include m.mq(sp) {
+        margin: 0px 0px 0px 40px;
+    }
+}
+
+.career__timeline .timeline__item .time__date .time {
+	font-size: 6em;
+	font-weight: 700;
+	position: relative;
+	margin: 0;
+	letter-spacing: 3px;
+	color: rgba(117,157,228,0.2);;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -44px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 3px solid v.$color-tag4;
+        background: #fff;
+    }
+
+    @include m.mq(sp) {
+
+        &:before {
+            left: -32px;
+        }
+    }
+}
+
+.career__timeline .timeline__item .time__date .flag {
+	font-size: 1.5em;
+	font-weight: 700;
+	margin: 0;
+	margin-top: -60px;
+	color: v.$color-tag4;
+}
+
+.career__timeline .timeline__item .desc {
+	font-size: 0.8em;
+	line-height: 20px;
+	margin-top: 10px;
+	padding-left: 20px;
+	border-left: 1px solid v.$color-tag4;
+}
+
+.career__image {
+    position: absolute;
+    right: 0;
+    top: 30%;
+
+    @include m.mq(sp) {
+        position: initial;
+        text-align: center;
+    }
+}
+
+

@@ -1,0 +1,157 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+.page-contact__container {
+
+    @include m.mq(sp) {
+        padding: 0 20px;
+    }
+}
+.contact__form {
+    width: 800px;
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 50px 60px;
+    background-color: #fff;
+
+    @include m.mq(sp) {
+        padding: 30px;
+    }
+}
+
+.contact-form__row {
+    display: flex;
+
+    @include m.mq(sp) {
+        display: block;
+    }
+
+    &:not(:first-child) {
+        margin-top: 60px;
+
+        @include m.mq(sp) {
+            margin-top: 20px;
+        }
+    }
+}
+
+.contact-form__label {
+    width: 160px;
+    padding-top: 5px;
+
+    @include m.mq(sp) {
+        width: 100%;
+    }
+
+    label {
+        font-weight: 700;
+
+        &.is-required {
+            display: inline-block;
+            position: relative;
+
+            &::after {
+                content: "必須";
+                position: absolute;
+                width: 44px;
+                top: calc(100% + 2px);
+                left: 0;
+                padding: 2px 8px;
+                color: #fff;
+                background-color: v.$color-tag1;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 1.2;
+                text-align: center;
+                border-radius: 4px;
+
+                @include m.mq(sp) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: calc(100% + 6px);
+                }
+            }
+        }
+    }
+}
+
+
+.contact-form__input {
+    width: calc(100% - 160px);
+
+    @include m.mq(sp) {
+        width: 100%;
+    }
+
+    [type="text"] {
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid v.$color-text1;
+        background-color: #fff;
+        padding: 10px 16px;
+        appearance: none;
+        border-radius: 5px;
+        color: inherit;
+        font-family: inherit;
+        font-size: 14px;
+        }
+
+    [type="email"] {
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid v.$color-text1;
+        background-color: #fff;
+        padding: 10px 16px;
+        appearance: none;
+        border-radius: 5px;
+        color: inherit;
+        font-family: inherit;
+        font-size: 14px;
+    }
+
+    [type="phone"] {
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid v.$color-text1;
+        background-color: #fff;
+        padding: 10px 16px;
+        appearance: none;
+        border-radius: 5px;
+        color: inherit;
+        font-family: inherit;
+        font-size: 14px;
+    }
+
+    textarea {
+        height: 240px;
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid v.$color-text1;
+        background-color: #fff;
+        padding: 10px 16px;
+        appearance: none;
+        border-radius: 5px;
+        color: inherit;
+        font-family: inherit;
+        font-size: 14px;
+    }
+}
+
+
+.contact-form__submit {
+    margin-top: 50px;
+    text-align: center;
+
+    [type="submit"] {
+        padding: 11px 55px;
+        color: #fff;
+        background-color: v.$color-text1;
+        border: 1px dashed v.$color-text1;
+        box-shadow: 0 0 0 4px v.$color-text1;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 2.5em;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}

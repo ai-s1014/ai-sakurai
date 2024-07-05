@@ -1,0 +1,45 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+.title__portfolio {
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 230px;
+        height: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: v.$color-tag3;
+        opacity: 0.4;
+        z-index: -1;
+    }
+}
+
+.sp__image-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sp__image {
+    width: 50%;
+    text-align: center;
+
+    &:nth-child(n + 3) {
+        margin-top: 60px;
+    }
+
+    img {
+        width: 300px;
+    }
+
+    @include m.mq(sp) {
+        flex-direction: column;
+        width: 100%;
+    }
+}

@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/* 共通パーツ */
+@use "common";
+@use "variable";
+@use "btn";
+
+/* レイアウト */
+@use "header";
+@use "top";
+@use "footer";
+
+/* レスポンシブ */
+@use "mixin";
+
+/* 下層ページ */
+@use "about";
+@use "works";
+@use "contact";
+
+/* works 下層ページ */
+@use "works-ohisama";
+@use "works-portfolio";
+@use "works-sobolon";

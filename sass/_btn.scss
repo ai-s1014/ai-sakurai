@@ -1,0 +1,82 @@
+@use "variable" as v;
+@use "mixin" as m;
+
+.btn {
+    width: 200px;
+    height: 100px;
+    display: block;
+    text-align: center;
+
+    &:hover {
+        transition: all 0.3s ease 0;
+    }
+
+    @include m.mq(sp) {
+        width: 160px;
+    }
+}
+
+.oval__btn {
+
+    a {
+        padding: 10px 50px;
+        font-size: 24px;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+}
+
+.arrow__btn {
+    position: relative;
+    padding: 0 20px;
+    margin-left: auto;
+    color: v.$color-text1;
+    font-size: 34px;
+    font-weight: 700;
+    outline: none;
+
+    @include m.mq(sp) {
+        font-size: 26px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 30%;
+        right: 0;
+        width: 85%;
+        height: 1px;
+        transform: translateX(-3px);
+        background-color: v.$color-text1;
+        transition: all 0.3s ease 0;
+    }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 45px;
+            right: 0;
+            width: 50px;
+            height: 1px;
+            transform: rotate(35deg);
+            transition: all 0.3s ease 0;
+            background-color: v.$color-text1;
+            z-index: 99;
+        }
+
+        &:hover {
+
+            &::before {
+                left: 20%;
+            }
+        }
+
+        &:hover {
+
+            &::after {
+                right: -5%;
+            }
+        }
+}
+
+
