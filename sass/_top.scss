@@ -41,8 +41,8 @@
 
 .about__btn {
     position: absolute;
-    top: 55%;
-    right: 30%;
+    top: 14rem;
+    right: 14rem;
     transform: translate(20%, 70%);
 
     @include m.mq(sp) {
@@ -69,10 +69,10 @@
 }
 
 .about__btn-sp {
-    width: 110px;
+    width: 10rem;
     position: absolute;
-    top: 50%;
-    right: 22%;
+    top: 15rem;
+    right: 9rem;
     transform: translate(20%, 70%);
     padding: 10px 5px;
     text-align: center;

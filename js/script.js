@@ -3,29 +3,12 @@ var windowWidth = $(window).width();
 var windowSm = 767;
 if (windowWidth <= windowSm) {
 
-    /* ハンバーガーメニュー */
-$(function() {
-    $('.hamburger').click(function() {
-        $(this).toggleClass('active');
 
-        if ($(this).hasClass('active')) {
-            $('.globalMenuSp').addClass('active');
-        } else {
-            $('.globalMenuSp').removeClass('active');
-        }
-
-    });
+/* hamburger */
+$('.hamburger').on('click', function() {
+	$(this).toggleClass('open');
+	$('.globalMenuSp').toggleClass('open');
 });
-//メニュー内を閉じておく
-$(function() {
-    $('.globalMenuSp a[href]').click(function() {
-        $('.globalMenuSp').removeClass('active');
-       $('.hamburger').removeClass('active');
-
-    });
-  });
-
-} else {
 
 /* slider */
 $(function () {
